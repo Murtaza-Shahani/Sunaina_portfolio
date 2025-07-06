@@ -1,0 +1,396 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+
+}
+
+/* ------------------ Navbar ------------------ */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgb(30, 27, 27);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+/* Hamburger icon — always visible */
+.hamburger {
+  display: flex; 
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+  
+  
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* Optional: nav menu style */
+.nav-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 0 0 0 10px;
+  z-index: 1000;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 0;
+  font-family: 'Pacifico', cursive;
+}
+/* Fullscreen Overlay Menu */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.overlay-menu .close-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: rgb(0, 255, 247);
+  cursor: pointer;
+}
+
+.overlay-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+}
+
+.overlay-nav a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.overlay-nav a:hover {
+  color: rgb(0, 255, 247);
+}
+/* Animation Classes */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: fadeInSlide 0.9s forwards;
+}
+
+/* Exit Animation Class */
+.overlay-menu.exit {
+  animation: fadeOutSlide 0.9s forwards;
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutSlide {
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+.portfolio-logo {
+  font-size: 2rem;
+  color:rgb(0, 255, 247);
+  font-family: 'Pacifico', cursive;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .portfolio-logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-logo {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* ------------------ Home Section ------------------ */
+.home-section {
+  width: 100vw;
+  min-height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 30px 20px; /* 🔵 Fixed Top Padding = Navbar Height */
+  gap: 30px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.home-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.home-left h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.home-left p {
+  margin: 20px 0;
+  color: whitesmoke;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+}
+
+.btn {
+  background-color: rgb(0, 255, 247);
+  padding: 12px 24px;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #fff;
+  color: black;
+}
+
+/* ------------------ Home Right (Image Box) ------------------ */
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.image-box {
+  width: 300px;
+  height: 350px;
+  border: 4px solid rgb(0, 255, 247);
+  padding: 10px;
+  background: linear-gradient(145deg, rgb(0,255,247), black);
+  box-shadow: 0 0 20px rgb(0, 255, 247), 0 0 40px rgb(0, 255, 247);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Typed Text */
+.typed-text {
+  font-size: 1.8rem;
+  color: rgb(0, 255, 247);
+  display: inline-block;
+  white-space: nowrap;
+  font-family: 'Pacifico', cursive;
+}
+
+
+/* ------------------ Responsive Media Queries ------------------ */
+@media (max-width: 992px) {
+  .home-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* ✅ fix: center the image properly */
+    padding: 30px 20px 20px;     /* ✅ top padding kam kar di */ /* ✅ Fixed top padding for mobile/tablet */
+    height: auto;
+  }
+
+  .home-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-left p {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    margin-left: 0;
+  }
+
+  .home-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .image-box {
+    width: 250px;
+    height: 300px;
+  }
+
+  .typed-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-left h1 {
+    font-size: 2rem;
+  }
+
+  .home-left p {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+
+  .image-box {
+    width: 200px;
+    height: 250px;
+    padding: 8px;
+    box-shadow: 0 0 10px rgb(0, 255, 247), 0 0 20px rgb(0, 255, 247);
+  }
+
+  .typed-text {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+.social-icons {
+  position: fixed;
+  top: 25%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  z-index: 1000;
+}
+
+.social-icons a {
+  color: rgb(0, 255, 247);
+  font-size: 1.8rem;
+  background: black;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.social-icons a:hover {
+
+  color: white;
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .social-icons {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
+    padding: 8px;
+    margin: 0 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
