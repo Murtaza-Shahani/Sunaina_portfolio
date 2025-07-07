@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Projects.css";
+import "../Styles/Projects.css";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter"; // ✅ Add this
 import project1 from "../assets/project1.jpg";

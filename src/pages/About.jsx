@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/About.css";
+import "../Atyles/About.css";
 import profilePic from "../assets/pic.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

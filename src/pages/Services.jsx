@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Services.css";
+import "../Styles/Services.css";
 import {
   FaReact,
   FaNodeJs,
