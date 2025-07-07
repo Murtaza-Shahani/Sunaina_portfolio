@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Home.css";
+import "../Styles/Home.css";
 import pic2 from "../assets/pic.jpeg";
 import { Typewriter } from "react-simple-typewriter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
